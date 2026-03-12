@@ -11,6 +11,8 @@ main()
 {
 	int opcao, n1, n2;
 	float res;
+	opcao = n1 = n2 = 0;
+	res = 0.0;
 	// conferir operação
 	printf("============================================\n");
 	printf("---------- Calculadora Simples -----------\n");

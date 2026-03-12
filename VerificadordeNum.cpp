@@ -9,6 +9,7 @@
 main()
 {
 	int num;
+	num = 0;
 	printf("Escreva um Numero: ");
 	scanf("%d", &num);
 	if(num > 0){
