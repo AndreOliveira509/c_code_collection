@@ -9,8 +9,9 @@
 
 main(){
 	float c, f;
+	c = f = 0.0;
 	printf("Escreva a temperatura em graus Celsius: ");
 	scanf("%f", &c);
 	f = (c * 1.8) + 32;
-	printf("%fº em Celsius equivale a %f.2º Fahrenheit", c, f);
+	printf("%fº em Celsius equivale a %fº Fahrenheit", c, f);
 }
