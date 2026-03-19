@@ -15,6 +15,6 @@ main()
 	printf("Escreva sua Idade (Anos, meses e dias), Respectivamente:");
 	scanf("%d %d %d", &a, &m, &d);
 	t = (a * 365) + (m * 30) + d;
-	printf("Sua Idade em dias é %d", t);
+	printf("Sua Idade em dias eh %d", t);
 	
 }
