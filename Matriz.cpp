@@ -1,69 +1,50 @@
-/*
-	Name: Matriz.cpp
-	Author: André Oliveira
-	Date: 12/05/26 19:23
-	Description: Programa que encontra o ponto de cela de uma matriz
-*/
-# include <stdio.h>
+# include<stdio.h>
 
 main(){
-	int cont, cont2, w, h, num, snum, menor, menori, maior, pontodacela, k;
-	w = h = snum = 0;
+	int w, h, cont, cont2, num, pontodacela, maior, menori, menor;
+	
 	scanf("%d", &w);
 	scanf("%d", &h);
 	
 	int matriz[h][w];
-	// cont = heigh cont 2 = witdh
 	
-	
-	for (cont = 0; cont < h; cont++){
-		for (cont2 = 0; cont2 < w; cont2++){
-			printf("Digite o valor para a posição [%d][%d]: ", cont, cont2);
+	for(cont = 0; cont < h; cont++){
+		for(cont2 = 0; cont2 < w; cont2++){
+			printf("Posicao |%d| |%d|: ", cont, cont2);
 			scanf("%d", &num);
 			matriz[cont][cont2] = num;
-			printf("%d", num);
+		}
+	}
+	
+	for(cont = 0; cont < h; cont++){
+		for(cont2 = 0; cont2 < w; cont2++){
+			
+			printf("|%d|", matriz[cont][cont2]);
 		}
 		printf("\n");
 	}
-	
-	printf("\n--- Matriz Digitada ---\n");
-
-	// FASE 2: Imprimindo a matriz em formato de grade
-	for (cont = 0; cont < h; cont++) {
-	    for (cont2 = 0; cont2 < w; cont2++) {
-	        printf("%d\t", matriz[cont][cont2]);
-	    }
-	    printf("\n"); // Quebra a linha após terminar as colunas daquela linha
-	}
-	
-	
-	for (cont = 0; cont < h; cont++){
-		menor = matriz[cont][0];
+	for(cont = 0; cont < h; cont++){
+		maior = matriz[0][0];
 		menori = 0;
-		
 		// menor da linha
-		for (cont2 = 0; cont2 < w; cont2++){
-
-			if (matriz[cont][cont2] < menor){
-			menor = matriz[cont][cont2];
-			menori = cont2;
+		for(cont2 = 0; cont2 < w; cont2++){
+			if (menor > matriz[cont][cont2]){
+				menor = matriz[cont][cont2];
+				menori = cont2;
 			}
+			
 		}
-		int pontodacela = 1;
-		
-		// maior da coluna
-		for (k = 0; k < h; k++){
-			if (matriz[k][menori] > menor){
-			pontodacela = 0;
-			break;
-			}
+		pontodacela = 1;
+		for(int k = 0; k < h; k++){
+		if (matriz[k][menori] > menor){
+		pontodacela = 0;
+		}	
 		}
 		
-		if (pontodacela == 1){
+	if (pontodacela == 1){
 			printf("Ponto de sela encontrado: %d na posicao [%d][%d]\n", menor, cont, menori);
 		}
 		
 	}
 	
 }
-
